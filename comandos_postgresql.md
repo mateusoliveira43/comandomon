@@ -14,7 +14,6 @@ Voltar à página inicial do [COMANDOMON](README.md).
 ## Tarefas
 
 - [ ] Seguir padrão das outras lista de comandos
-- [ ] Testar comandos
 
 
 

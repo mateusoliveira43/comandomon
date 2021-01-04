@@ -1,4 +1,4 @@
-# Comandos do Python
+# Comandos Python
 
 Voltar à página inicial do [COMANDOMON](README.md).
 

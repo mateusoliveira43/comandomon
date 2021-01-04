@@ -1,4 +1,4 @@
-# Comandos do PostgreSQL
+# Comandos PostgreSQL
 
 Voltar à página inicial do [COMANDOMON](README.md).
 

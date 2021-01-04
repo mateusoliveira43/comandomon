@@ -1,4 +1,4 @@
-# Comandos do Git
+# Comandos Git
 
 Voltar à página inicial do [COMANDOMON](README.md).
 
@@ -136,6 +136,7 @@ Para enviar os *commits* à `branch` nomeada `<ramo>` do repositório remoto nom
 ```
 git push <repositorio> <ramo>
 ```
+Se usada a opção `-u` (de `upstream`), não é necessário passar o repositório e ramo nas próximas vezes que usar os comandos `push` ou `pull`.
 
 Para *mergear* as alterações da `branch` nomeada `<ramo>` na `branch` em que se encontra, execute 
 ```

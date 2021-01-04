@@ -54,6 +54,12 @@ git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-m
 git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k
 ```
 
+Para instalar a fonte utilizada pelos temas do oh my zsh, execute
+```bash
+sudo apt-get install fonts-powerline
+```
+Adicione ela as fontes do terminal do VSCode: `'PowerlineSymbols'`.
+
 Para configurar o oh my zsh, execute
 ```bash
 nano ~/.zshrc
@@ -80,12 +86,17 @@ source ~/.zshrc
 
 Para configurar o tema, execute
 ```bash
-nano .oh-my-zsh\custom\themes\powerlevel9k\powerlevel9k.zsh-theme
+nano .oh-my-zsh/custom/themes/powerlevel9k/powerlevel9k.zsh-theme
 ```
 
 Adicione a seguinte linha ao final da função `left_prompt_end()`
 ```
 echo "\n ➜ ";
+```
+
+Para aplicar as alterações, execute
+```bash
+source .oh-my-zsh/custom/themes/powerlevel9k/powerlevel9k.zsh-theme
 ```
 
 ## Comandos

@@ -8,6 +8,7 @@ Lista de comandos:
 - [Comandos Git](comandos_git.md)
 - [Comandos PostgreSQL](comandos_postgresql.md)
 - [Comandos Python](comandos_python.md)
+- [Comandos SQL](comandos_sql.md)
 
 Dúvidas e sugestões de melhoria são bem-vindas! Entre em contato ou abra uma *Issue* ou um *Pull Request* as reportando!
 

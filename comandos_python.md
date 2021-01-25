@@ -7,6 +7,7 @@ Voltar à página inicial do [COMANDOMON](README.md).
 ## Sumário
 
 - [Tarefas](#Tarefas)
+- [Instalação](#Instalação)
 - [Comandos](#Comandos)
 
 
@@ -18,14 +19,30 @@ Voltar à página inicial do [COMANDOMON](README.md).
 
 
 
+## Instalação
+
+Para instalar o gerenciador de pacotes `pip`, execute
+```
+sudo apt install python3-pip
+pip install -U pip 
+```
+
+
+
 ## Comandos
 
 Para mostrar os pacotes/bibliotecas instaladas no seu projeto, execute
 ```
-pip freeze
+pip list
 ```
 
 Para mostrar informações do pacote/biblioteca nomeado `<nome>`, instalado no seu projeto, execute
 ```
 pip show <nome>
 ```
+
+Para gerar um arquivo `requirements.txt` de dependências do projeto, execute
+```
+pip freeze > requirements.txt
+```
+Note que é melhor anotar os pacotes realmente instalados, em vez de listar pacotes que já seriam instalados por serem depedência de outros.

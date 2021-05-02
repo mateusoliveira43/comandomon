@@ -19,7 +19,7 @@ Voltar à página inicial do [COMANDOMON](README.md).
 
 ## Instalação
 
-Comandos para o Sitema Operacional Linux. Execute-os no Terminal.
+Comandos para o Sistema Operacional Linux. Execute-os no Terminal.
 
 Para instalar o `PostgreSQL`, execute
 ```bash
@@ -38,9 +38,9 @@ psql -V
 
 ## Comandos
 
-Esse material é apenas um resumo, procure a documentação completa do `PostgreSQL` para maiores informações. 
+Esse material é apenas um resumo, procure a documentação completa do `PostgreSQL` para maiores informações.
 
-Para entar na linha de comando do `PostgreSQL` no Linux, no Terminal execute
+Para entrar na linha de comando do `PostgreSQL` no Linux, no Terminal execute
 ```bash
 sudo -u <usuario> psql
 ```
@@ -59,7 +59,7 @@ ALTER USER <usuario> WITH PASSWORD '<senha>';
 
 Depois, alterar o método de autenticação de `peer` para `md5` no arquivo `pg_hba.conf` (provavelmente na pasta `etc/postgresql/`). É necessário privilégios de administrador para alterar o arquivo.
 
-Por fim, é necesário reiniciar o serviço do `PostgreSQL`, executando no Terminal
+Por fim, é necessário reiniciar o serviço do `PostgreSQL`, executando no Terminal
 ```bash
 sudo service postgresql restart
 ```

@@ -24,7 +24,7 @@ Voltar à página inicial do [COMANDOMON](README.md).
 Para instalar o gerenciador de pacotes `pip`, execute
 ```
 sudo apt install python3-pip
-pip install -U pip 
+pip install -U pip
 ```
 
 
@@ -45,4 +45,4 @@ Para gerar um arquivo `requirements.txt` de dependências do projeto, execute
 ```
 pip freeze > requirements.txt
 ```
-Note que é melhor anotar os pacotes realmente instalados, em vez de listar pacotes que já seriam instalados por serem depedência de outros.
+Note que é melhor anotar os pacotes realmente instalados, em vez de listar pacotes que já seriam instalados por serem dependência de outros.

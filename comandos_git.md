@@ -85,7 +85,7 @@ git remote add <nome> <endereço>
 ```
 alterando `<endereco>` pelo endereço do repositório remoto.
 
-Para mostrar o estado (em relação à arquivos não rastreados/modificados/deletados e a fila de espaera de arquivos a serem *commitados*), execute
+Para mostrar o estado (em relação à arquivos não rastreados/modificados/deletados e a fila de espera de arquivos a serem *commitados*), execute
 ```
 git status
 ```
@@ -100,7 +100,7 @@ Para mostrar o nome do repositório remoto, execute
 git remote show
 ```
 
-Para listar as `branchs` do repositório (e mostrar em qual está no momento), execute
+Para listar as `branches` do repositório (e mostrar em qual está no momento), execute
 ```
 git branch
 ```
@@ -115,7 +115,7 @@ Para criar uma `branch` nomeada `<ramo>` e se mover para ela, execute
 git checkout -b <ramo>
 ```
 
-Para adicionar todos os arquivos alterados, no nível do diretório, à fila de espaera a serem *commitados*, execute 
+Para adicionar todos os arquivos alterados, no nível do diretório, à fila de espera a serem *commitados*, execute
 ```
 git add .
 ```
@@ -138,18 +138,28 @@ git push <repositorio> <ramo>
 ```
 Se usada a opção `-u` (de `upstream`), não é necessário passar o repositório e ramo nas próximas vezes que usar os comandos `push` ou `pull`.
 
-Para *mergear* as alterações da `branch` nomeada `<ramo>` na `branch` em que se encontra, execute 
+Para incluir uma tag no versionamento, execute
+```
+git tag -a <nome-da-tag> -m "<mensagem>"
+```
+
+Para enviar a tag para o repositório remoto nomeado `<repositorio>`, execute
+```
+git push <repositorio> <nome-da-tag>
+```
+
+Para *mergear* as alterações da `branch` nomeada `<ramo>` na `branch` em que se encontra, execute
 ```
 git merge <ramo>
 ```
 
 Para deletar a `branch` nomeada `<ramo>` (não pode se encontrar nela), execute
 ```
-git branch -D <ramo> 
+git branch -D <ramo>
 ```
 Opção `-D` de `delete` e `force`.
 
-Para atualizar a `branch` local nomeada `<ramo>` com as alterações de sua contraparte no repositorio remoto nomeado `<repositorio>`, execute 
+Para atualizar a `branch` local nomeada `<ramo>` com as alterações de sua contraparte no repositorio remoto nomeado `<repositorio>`, execute
 ```
 git pull <repositorio> <ramo>
 ```
@@ -160,13 +170,26 @@ git rebase -i <ramo>
 ```
 Isso irá abrir a linha de comando do editor de texto de sua máquina (`nano` ou `vim`, provavelmente).
 
-Para transformar **n** *commits* em um único que contenha todas as alterações desses commmits (não funciona se for o *commit* inicial do repositório), execute
+Para transformar **n** *commits* em um único que contenha todas as alterações desses commits (não funciona se for o *commit* inicial do repositório), execute
 ```
 git rebase -i <commit>~1
 ```
 alterando `<commit>` pelo identificador do primeiro *commit* (código alfa-numérico que cada *commit* possui).
 
-Isso irá abrir a linha de comando do editor de texto de sua máquina. Deixe o primeiro *commit* como `pick` e mude os outros para `s` (ou `squash`). Em seguida, diGite a mensagem desse novo *commit*.
+Isso irá abrir a linha de comando do editor de texto de sua máquina. Deixe o primeiro *commit* como `pick` e mude os outros para `s` (ou `squash`). Em seguida, digite a mensagem desse novo *commit*.
+
+Para automatizar esse processo, execute
+```
+git commit --fixup <commit>
+```
+a cada commit (exceto o primeiro).
+
+Isso os deixará marcados como **fixup** na hora do rebase (que funciona como squash).
+
+Na hora do rebase, execute
+```
+git rebase --autosquash -i <commit>~1
+```
 
 Como foram apagados os *commit* anteriores, para enviar as alterações para o repositório remoto, será necessário usar a opção `-f` (de `force`) no comando de `push`. Exemplo
 ```

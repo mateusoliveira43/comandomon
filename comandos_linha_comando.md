@@ -19,7 +19,7 @@ Voltar à página inicial do [COMANDOMON](README.md).
 
 
 
-## Instalação 
+## Instalação
 
 Passo para instalação e configuração do [oh my zsh](https://github.com/ohmyzsh/ohmyzsh) no Linux.
 
@@ -27,12 +27,12 @@ Para conferir se o zsh está instalado, execute
 ```bash
 zsh --version
 ```
-Se não, intale-o executando
+Se não, instale-o executando
 ```bash
 sudo apt-get install zsh
 ```
 
-Para conferir qual o seu intrepertador de linha de comando padrão, execute
+Para conferir qual o seu interpretador de linha de comando padrão, execute
 ```bash
 echo $SHELL
 ```
@@ -131,7 +131,7 @@ cd <caminho>
 cd ~
 cd ..
 ```
-Use a tecla `Tab` para mostrar e cmpletar as opções. Há destinção de maiúsculas e minúsculas.
+Use a tecla `Tab` para mostrar e completar as opções. Há distinção de maiúsculas e minúsculas.
 
 Para criar um arquivo, execute
 ```bah

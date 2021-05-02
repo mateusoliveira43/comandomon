@@ -6,6 +6,7 @@ Lista de comandos:
 
 - [Comandos Linha de Comando](comandos_linha_comando.md)
 - [Comandos Git](comandos_git.md)
+- [Comandos Docker](comandos_docker.md)
 - [Comandos PostgreSQL](comandos_postgresql.md)
 - [Comandos Python](comandos_python.md)
 - [Comandos SQL](comandos_sql.md)

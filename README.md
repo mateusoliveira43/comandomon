@@ -4,7 +4,7 @@ O covil dos comandos que eu vou esquecer um dia :joy:
 
 Lista de comandos:
 
-- [Comandos Linha de Comando](comandos_linha_comando.md)
+- [Comandos Shell](comandos_shell.md)
 - [Comandos Git](comandos_git.md)
 - [Comandos Docker](comandos_docker.md)
 - [Comandos PostgreSQL](comandos_postgresql.md)

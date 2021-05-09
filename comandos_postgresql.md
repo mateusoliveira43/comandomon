@@ -111,3 +111,13 @@ Para sair da linha de comando do `PostgreSQL`, execute
 \q
 ctrl+D
 ```
+
+Para ver o tamanho de um banco de dados nomeado `<database>`, execute
+```
+SELECT pg_size_pretty( pg_database_size('<database>') )
+```
+
+Para ver o tamanho de uma tabela nomeada `<tabela>`, execute
+```
+SELECT pg_size_pretty( pg_total_relation_size('"<tabela>"') )
+```

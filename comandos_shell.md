@@ -1,4 +1,4 @@
-# Comandos Linha de Comando
+# Comandos Shell
 
 Voltar à página inicial do [COMANDOMON](README.md).
 
@@ -24,11 +24,11 @@ Voltar à página inicial do [COMANDOMON](README.md).
 Passo para instalação e configuração do [oh my zsh](https://github.com/ohmyzsh/ohmyzsh) no Linux.
 
 Para conferir se o zsh está instalado, execute
-```bash
+```
 zsh --version
 ```
 Se não, instale-o executando
-```bash
+```
 sudo apt-get install zsh
 ```
 
@@ -48,20 +48,20 @@ sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.
 ```
 
 Para instalar os plugins e temas, execute
-```bash
+```
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k
 ```
 
 Para instalar a fonte utilizada pelos temas do oh my zsh, execute
-```bash
+```
 sudo apt-get install fonts-powerline
 ```
 Adicione ela as fontes do terminal do VSCode: `'PowerlineSymbols'`.
 
 Para configurar o oh my zsh, execute
-```bash
+```
 nano ~/.zshrc
 ```
 
@@ -85,12 +85,12 @@ source ~/.zshrc
 ```
 
 Para configurar o tema, execute
-```bash
+```
 nano .oh-my-zsh/custom/themes/powerlevel9k/powerlevel9k.zsh-theme
 ```
 
 Adicione a seguinte linha ao final da função `left_prompt_end()`
-```
+```bash
 echo "\n ➜ ";
 ```
 
@@ -107,7 +107,7 @@ help
 info
 man man
 ```
-Comando `help` funciona apenas no bash, não no zsh. Para acessar o bash no zsh, execute `bash`. Para sair do bash e voltar ao zsh, execute `Ctrl+D`.
+Comando `help` funciona apenas no bash, não no zsh. Para acessar o bash no zsh, execute `bash`. Para acessar o zsh no bash, execute `zsh`.
 
 Para abrir o Terminal, execute
 ```
@@ -128,7 +128,7 @@ ls
 Para trocar de diretório (**C**hange **D**irectory), execute
 ```bash
 cd <caminho>
-cd ~
+cd
 cd ..
 ```
 Use a tecla `Tab` para mostrar e completar as opções. Há distinção de maiúsculas e minúsculas.
@@ -163,3 +163,25 @@ Para fechar o Terminal, execute
 exit
 Ctrl+D
 ```
+
+Para listar os comandos executados, execute
+```bash
+history
+```
+
+Para listar as conexões com a Internet ativas, execute
+```bash
+sudo netstat -atunp
+```
+Opções `-a` de `all`; `-t` de `tcp`; `-u` de `udp`; `-n` de `numeric`; `-p` de `programs`.
+
+Para parar um processo pelo seu PID, execute
+```bash
+kill <PID>
+```
+
+Para buscar ocorrências de um padrão em uma pasta, execute
+```bash
+grep -r <padrão> <pasta>
+```
+Opção `-r` de `recursive`.

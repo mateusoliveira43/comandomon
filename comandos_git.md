@@ -68,6 +68,12 @@ Para editar as configurações de usuário do `Git` da máquina, execute
 git config --global -e
 ```
 
+Para adicionar uma chave SSH ao seu repositório remoto, crie uma executando
+```
+ssh-keygen -t rsa
+```
+e siga os passos indicados pelo próprio comando. Depois, deve ser adicionada a chave ao seu repositório remoto. No caso do GitHub, [essa página do próprio GitHub](https://docs.github.com/en/github/authenticating-to-github/adding-a-new-ssh-key-to-your-github-account) explica como adicioná-la.
+
 Para iniciar um repositório, execute
 ```
 git init

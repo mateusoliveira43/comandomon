@@ -46,3 +46,16 @@ Para gerar um arquivo `requirements.txt` de dependências do projeto, execute
 pip freeze > requirements.txt
 ```
 Note que é melhor anotar os pacotes realmente instalados, em vez de listar pacotes que já seriam instalados por serem dependência de outros.
+
+Para listar os atributos de um objeto, use a função
+```python
+dir(objeto)
+```
+
+Para inspecionar bytecode gerado pelo Python, use as funções
+```python
+import dis
+
+dis.show_code(função)
+dis.dis(função)
+```

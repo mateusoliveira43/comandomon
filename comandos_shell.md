@@ -182,6 +182,6 @@ kill <PID>
 
 Para buscar ocorrências de um padrão em uma pasta, execute
 ```bash
-grep -r <padrão> <pasta>
+grep -Inr <padrão> <pasta>
 ```
-Opção `-r` de `recursive`.
+Opções `-I` atalho para `--binary-files=without-match`; `-n` de `--line-number`; `-r` de `recursive`. Para excluir certas extensões de arquivos da busca, use a opção `--exclude=\*.nome` ou ``--exclude=\*.{nome1, nome2, ..., nomeN}`.

@@ -152,6 +152,7 @@ Para apagar uma pasta, execute
 ```bash
 rm -r <pasta>
 ```
+Opção `-r` de `--recursive`.
 
 Para mostrar caminho absoluto do diretório atual (**P**rint **W**orking **D**irectory), execute
 ```bash
@@ -169,16 +170,30 @@ Para listar os comandos executados, execute
 history
 ```
 
-Para listar as conexões com a Internet ativas, execute
+Para listar as conexões de rede ativas, execute
 ```bash
 sudo netstat -atunp
 ```
 Opções `-a` de `all`; `-t` de `tcp`; `-u` de `udp`; `-n` de `numeric`; `-p` de `programs`.
 
+Para listar processos que correspondem a um padrão, execute
+```bash
+pgrep -a <padrão>
+```
+Opção `-a` de `--list-full`. Para listar processos que correspondem ao comando completo, use a opção `-f` (de `--full`).
+
 Para parar um processo pelo seu PID, execute
 ```bash
 kill <PID>
 ```
+
+Para parar processos pelo seu padrão, execute
+```bash
+pkill <padrão>
+```
+Para parar processos que correspondem ao comando completo, use a opção `-f` (de `--full`).
+
+Ambos comandos anteriores aceitam a opção `-9` (de `SIGKILL`).
 
 Para buscar ocorrências de um padrão em uma pasta, execute
 ```bash

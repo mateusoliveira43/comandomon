@@ -143,6 +143,17 @@ Para criar uma pasta (**M**a**k**e **Dir**ectory), execute
 mkdir <pasta>
 ```
 
+Para copiar um arquivo (**C**o**p**y), execute
+```bash
+cp <arquivo> <destino>
+```
+
+Para copiar uma pasta, execute
+```bash
+cp -r <pasta> <destino>
+```
+Opção `-r` de `--recursive`.
+
 Para apagar um arquivo (**R**e**m**ove), execute
 ```bash
 rm <arquivo>
@@ -200,3 +211,14 @@ Para buscar ocorrências de um padrão em uma pasta, execute
 grep -Inr <padrão> <pasta>
 ```
 Opções `-I` atalho para `--binary-files=without-match`; `-n` de `--line-number`; `-r` de `recursive`. Para excluir certas extensões de arquivos da busca, use a opção `--exclude=\*.nome` ou ``--exclude=\*.{nome1, nome2, ..., nomeN}`.
+
+Para baixar um arquivo da internet, execute
+```bash
+wget <url>
+```
+
+Para criar um link simbólico (**L**i**n**k), execute
+```bash
+ln -s <executável> <atalho>
+```
+Opção `-s` de `--symbolic`. Atalho costuma ser `usr/local/bin/comando` ou `usr/bin/comando`.

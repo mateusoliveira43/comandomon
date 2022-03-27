@@ -27,6 +27,11 @@ sudo apt install python3-pip
 pip install -U pip
 ```
 
+Para instalar o gerenciador de ambiente virtuais `virtualenv`, execute
+```
+pip install -U virtualenv
+```
+
 
 
 ## Comandos
@@ -59,3 +64,58 @@ import dis
 dis.show_code(função)
 dis.dis(função)
 ```
+
+### Poetry
+
+[Documentação completa](https://python-poetry.org/docs/)
+
+Para criar um novo projeto (nova pasta), execute
+```
+poetry new <nome>
+```
+
+Para iniciar o Poetry em um projeto já existente, na raiz do projeto execute
+```
+poetry init
+```
+
+Para instalar as dependências do projeto, execute
+```
+poetry install
+```
+Use a opção `--no-dev` para não instalar as dependências de desenvolvimento.
+
+Use a opção `--no-root` para não instalar o projeto em si.
+
+Para adicionar uma dependência ao projeto, execute
+```
+poetry add <nome>
+```
+Use a opção `-D` para adicionar uma dependência de desenvolvimento.
+
+Para ativar o ambiente virtual, execute
+```
+poetry shell
+```
+Para desativá-lo, execute `CTRL+D`.
+
+Para visualizar a árvore de dependências do projeto, execute
+```
+poetry show --tree
+```
+
+Para executar um comando sem o ambiente virtual ativo, execute
+```
+poetry run <comando>
+```
+
+Para conferir se o arquivo `pyproject.toml` está no formato correto, execute
+```
+poetry check
+```
+
+Para gerar um arquivo `requirements.txt`, execute
+```
+poetry export -o <nome>.txt
+```
+Use a opção `--dev` para também salvar as dependências de desenvolvimento no arquivo.

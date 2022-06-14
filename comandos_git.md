@@ -85,6 +85,12 @@ git clone <endereco>
 ```
 alterando `<endereco>` pelo endereço do repositório remoto (por padrão a URL do repositório + .git).
 
+
+Para baixar um repositório remoto e inicializar seus submódulos, execute
+```
+git clone --recurse-submodules <endereco>
+```
+
 Para adicionar um repositório remoto nomeado `<nome>`, execute
 ```
 git remote add <nome> <endereço>

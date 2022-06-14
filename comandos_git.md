@@ -91,6 +91,22 @@ Para baixar um repositório remoto e inicializar seus submódulos, execute
 git clone --recurse-submodules <endereco>
 ```
 
+Para adicionar um submódulo em um projeto, execute
+```
+git submodule add <endereco>
+```
+É necessário ter um arquivo `.gitmodules` no projeto para executar o comando.
+
+Para iniciar os submódulos de um projeto, execute
+```
+git submodule update --init --recursive
+```
+
+Para atualizar os submódulos de um projeto, execute
+```
+git submodule update --remote
+```
+
 Para adicionar um repositório remoto nomeado `<nome>`, execute
 ```
 git remote add <nome> <endereço>

@@ -210,7 +210,11 @@ Para buscar ocorrências de um padrão em uma pasta, execute
 ```bash
 grep -Inr <padrão> <pasta>
 ```
-Opções `-I` atalho para `--binary-files=without-match`; `-n` de `--line-number`; `-r` de `recursive`. Para excluir certas extensões de arquivos da busca, use a opção `--exclude=\*.nome` ou `--exclude=\*.{nome1,nome2,...,nomeN}`.
+Opções `-I` atalho para `--binary-files=without-match`; `-n` de `--line-number`; `-r` de `recursive`.
+
+Para excluir certas extensões de arquivos da busca, use a opção `--exclude=\*.nome` ou `--exclude=\*.{nome1,nome2,...,nomeN}`.
+
+Para excluir certas pastas da busca, use a opção `--exclude-dir=nome`.
 
 Para baixar um arquivo da internet, execute
 ```bash

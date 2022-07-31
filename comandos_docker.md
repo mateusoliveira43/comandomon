@@ -38,6 +38,8 @@ curl -fsSL https://get.docker.com | bash
 ```
 [Mais informações](https://docs.docker.com/engine/install/)
 
+### Containers
+
 Para rodar um Container, execute
 ```
 docker container run <nome_imagem>
@@ -48,6 +50,7 @@ Opções
 - `--tty` (ou `-t`) para alocar um terminal.
 - `--interactive` (ou `-i`) para rodar em modo iterativo.
 - `--detach` (ou `-d`) para rodar em segundo plano.
+- `--name` para dar um nome ao Container (caso contrário, um nome aleatório é designado a ele).
 Para parar o Container em execução, `CTRL+C`.
 
 Para sair do Container sem pará-lo, `CTRL+P+Q`.
@@ -56,7 +59,9 @@ Para listar os Containers em execução, execute
 ```
 docker container ls
 ```
-Opção `--all` (ou `-a`) para também listar Containers parados.
+Opções
+- `--all` (ou `-a`) para também listar Containers parados.
+- `--size` (ou `-s`) para mostrar o tamanho dos Containers.
 
 Para pegar informações de um (ou mais) Container, execute
 ```
@@ -94,11 +99,44 @@ docker container logs --follow <nome_ou_id_container>
 ```
 Opção `--follow` (ou `-f`) para manter o processo ativo, e ir mostrando os logs que vão aparecendo. `CTRL+C` para parar o processo.
 
+Para visualizar as estatísticas de uso de recursos nos Containers, execute
+```
+docker container stats
+```
+Para parar o comando em execução, `CTRL+C`.
+
+Pode ser passado o nome de um Container, para listar apenas ele.
+
+Opção `--all` (ou `-a`) para também listar Containers parados.
+
+Para mostrar os processos em execução em um Container, execute
+```
+docker container top <nome_ou_id_container>
+```
+
+### Imagens
+
+Para montar uma imagem, execute
+```
+docker image build --tag <nome:versao> --file <caminho_do_Dockerfile> <caminho>
+```
+Atalho do comando: `docker build`
+
+Opções
+- `--tag` (ou `-t`) para nomear a imagem.
+- `--file` (ou `-f`) para passar o caminho do Dockerfile.
+
+Para listar as imagens baixadas, execute
+```
+docker image ls
+```
+Opções
+- `--all` (ou `-a`) para também listar imagens intermediárias.
+
 TODO
 ```
 docker network ls
 docker volume ls
-docker image ls -a
 
 'docker network rm ' + networks
 'docker volume rm ' + volumes

@@ -160,11 +160,9 @@ Opção `--force` (ou `-f`) para não perguntar se realmente deseja apagá-las.
 ### Volumes
 
 Existem três tipos de volumes:
-- `bind`.
+- `bind`: quando já existe o diretório na máquina hospedeira, e queremos montar ele no Container.
 - `volume`.
 - `tmpfs`.
-
-Volumes do tipo **bind** são quando já existe o diretório na máquina hospedeira, e quero montar ele no Container.
 
 Para criar volumes, passe a opção `--mount` nos comandos de Container
 ```
@@ -200,9 +198,25 @@ docker volume prune
 Opção `--force` (ou `-f`) para não perguntar se realmente deseja apagá-los.
 
 
-TODO
+
+### Redes
+
+Para listar as redes, execute
 ```
 docker network ls
-
-'docker network rm ' + networks
 ```
+
+Para apagar uma (ou mais) redes, execute
+```
+docker network rm <nome_ou_id_rede>
+```
+
+Para remover todos as redes não utilizados, execute
+```
+docker network prune
+```
+Opção `--force` (ou `-f`) para não perguntar se realmente deseja apagá-las.
+
+
+
+### TODO Compose

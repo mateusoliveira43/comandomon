@@ -38,6 +38,9 @@ curl -fsSL https://get.docker.com | bash
 ```
 [Mais informações](https://docs.docker.com/engine/install/)
 
+
+
+
 ### Containers
 
 Para rodar um Container, execute
@@ -93,6 +96,12 @@ docker container rm <nome_ou_id_container>
 ```
 Opção `--force` (ou `-f`) para apagar Containers que estejam em execução.
 
+Para apagar todos os Containers parados, execute
+```
+docker container prune
+```
+Opção `--force` (ou `-f`) para não perguntar se realmente deseja apagá-los.
+
 Para ver os logs de um Container, execute
 ```
 docker container logs --follow <nome_ou_id_container>
@@ -114,6 +123,8 @@ Para mostrar os processos em execução em um Container, execute
 docker container top <nome_ou_id_container>
 ```
 
+
+
 ### Imagens
 
 Para montar uma imagem, execute
@@ -130,15 +141,68 @@ Para listar as imagens baixadas, execute
 ```
 docker image ls
 ```
-Opções
-- `--all` (ou `-a`) para também listar imagens intermediárias.
+Opção `--all` (ou `-a`) para também listar imagens intermediárias.
+
+Para apagar uma (ou mais) imagem, execute
+```
+docker image rm <nome_ou_id_imagem>
+```
+Opção `--force` (ou `-f`) para apagar imagens que estejam sendo usadas.
+
+Para apagar todos as imagens paradas, execute
+```
+docker image prune
+```
+Opção `--force` (ou `-f`) para não perguntar se realmente deseja apagá-las.
+
+
+
+### Volumes
+
+Existem três tipos de volumes:
+- `bind`.
+- `volume`.
+- `tmpfs`.
+
+Volumes do tipo **bind** são quando já existe o diretório na máquina hospedeira, e quero montar ele no Container.
+
+Para criar volumes, passe a opção `--mount` nos comandos de Container
+```
+--mount src=<nome_volume>,dst=<caminho_no_container>
+--mount type=bind,src=<caminho_pasta>,dst=<caminho_no_container>
+```
+
+Ou execute `docker volume create <nome_volume>`, e passe a opção
+```
+--mount src=<nome_volume>,dst=<caminho_no_container>
+```
+nos comandos de Container
+
+Para criar volumes com permissão de apenas leitura, passe a opção `readonly` (ou `ro`)
+```
+--mount type=bind,src=<caminho_pasta>,dst=<caminho_no_container>,readonly
+```
+
+Para listar os volumes, execute
+```
+docker volume ls
+```
+
+Para apagar um (ou mais) volume, execute
+```
+docker volume rm <nome_volume>
+```
+
+Para remover todos os volumes não utilizados, execute
+```
+docker volume prune
+```
+Opção `--force` (ou `-f`) para não perguntar se realmente deseja apagá-los.
+
 
 TODO
 ```
 docker network ls
-docker volume ls
 
 'docker network rm ' + networks
-'docker volume rm ' + volumes
-'docker rmi -f ' + images
 ```

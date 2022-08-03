@@ -155,6 +155,18 @@ docker image prune
 ```
 Opção `--force` (ou `-f`) para não perguntar se realmente deseja apagá-las.
 
+Para ver as camadas criadas por uma imagem, execute
+```
+docker image history <nome_ou_id_imagem>
+```
+Atalho do comando: `docker history`
+
+Para rodar uma varredura de vulnerabilidades de segurança em uma imagem, execute
+```
+docker scan <nome_ou_id_imagem>
+```
+É necessário ter uma conta no [Docker Hub](https://hub.docker.com/).
+
 
 
 ### Volumes

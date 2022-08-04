@@ -231,4 +231,64 @@ Opção `--force` (ou `-f`) para não perguntar se realmente deseja apagá-las.
 
 
 
-### TODO Compose
+### Compose
+TODO rodar comandos para conferir
+
+Para checar a sintaxe do arquivo compose, execute
+```
+docker-compose <--file caminho/compose.yaml> config
+```
+
+Para montar as imagens dos serviços no arquivo compose, execute
+```
+docker-compose <--file caminho/compose.yaml> build
+```
+Passe os nomes dos serviços para montar imagens específicas.
+
+Para iniciar os serviços no arquivo compose, execute
+```
+docker-compose <--file caminho/compose.yaml> up
+```
+Se as imagens não estiverem montadas ainda, são montadas antes.
+
+Passe os nomes dos serviços para montar images específicas
+
+Para rodar um comando (substituir a instrução `CMD` no Dockerfile ou a seção `command` no serviço) em um serviço, execute
+```
+docker-compose <--file caminho/compose.yaml> run <serviço> <comando>
+```
+Opções
+- `--rm` para apagar o Container após execução do comando.
+- `--service-ports` habilita as portas do serviço definidas no arquivo compose.
+- `--entrypoint` para substituir a instrução `ENTRYPOINT` no Dockerfile ou a seção `entrypoint` no serviço
+
+Para apagar Containers e redes criadas por um arquivo compose, execute
+```
+docker-compose <--file caminho/compose.yaml> down
+```
+Opções
+- `--rmi` para apagar as imagens criadas pelo arquivo compose também.
+- `-v` (ou `--volumes`) para apagar os volumes criados pelo arquivo compose.
+
+```
+logs
+```
+Para ver os logs dos Containers criados pelo arquivo compose, execute
+```
+docker-compose <--file caminho/compose.yaml> logs --follow
+```
+Opção `--follow` (ou `-f`) para manter o processo ativo, e ir mostrando os logs que vão aparecendo. `CTRL+C` para parar o processo.
+
+Passe os nomes dos serviços para mostrar logs específicos.
+
+Para mostrar as imagens criadas pelo arquivo compose, execute
+```
+docker-compose <--file caminho/compose.yaml> images
+```
+Passe os nomes dos serviços para mostrar as imagens específicas.
+
+Para mostrar os processos em execução do arquivo compose, execute
+```
+docker-compose <--file caminho/compose.yaml> top
+```
+Passe os nomes dos serviços para mostrar os processos específicos.

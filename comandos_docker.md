@@ -232,22 +232,21 @@ Opção `--force` (ou `-f`) para não perguntar se realmente deseja apagá-las.
 
 
 ### Compose
-TODO rodar comandos para conferir
 
 Para checar a sintaxe do arquivo compose, execute
 ```
-docker-compose <--file caminho/compose.yaml> config
+docker-compose <--file caminho/compose.yaml --project-directory caminho> config
 ```
 
 Para montar as imagens dos serviços no arquivo compose, execute
 ```
-docker-compose <--file caminho/compose.yaml> build
+docker-compose <--file caminho/compose.yaml --project-directory caminho> build
 ```
 Passe os nomes dos serviços para montar imagens específicas.
 
 Para iniciar os serviços no arquivo compose, execute
 ```
-docker-compose <--file caminho/compose.yaml> up
+docker-compose <--file caminho/compose.yaml --project-directory caminho> up
 ```
 Se as imagens não estiverem montadas ainda, são montadas antes.
 
@@ -255,7 +254,7 @@ Passe os nomes dos serviços para montar images específicas
 
 Para rodar um comando (substituir a instrução `CMD` no Dockerfile ou a seção `command` no serviço) em um serviço, execute
 ```
-docker-compose <--file caminho/compose.yaml> run <serviço> <comando>
+docker-compose <--file caminho/compose.yaml --project-directory caminho> run <serviço> <comando>
 ```
 Opções
 - `--rm` para apagar o Container após execução do comando.
@@ -264,31 +263,28 @@ Opções
 
 Para apagar Containers e redes criadas por um arquivo compose, execute
 ```
-docker-compose <--file caminho/compose.yaml> down
+docker-compose <--file caminho/compose.yaml --project-directory caminho> down
 ```
 Opções
 - `--rmi` para apagar as imagens criadas pelo arquivo compose também.
 - `-v` (ou `--volumes`) para apagar os volumes criados pelo arquivo compose.
 
-```
-logs
-```
 Para ver os logs dos Containers criados pelo arquivo compose, execute
 ```
-docker-compose <--file caminho/compose.yaml> logs --follow
+docker-compose <--file caminho/compose.yaml --project-directory caminho> logs --follow
 ```
 Opção `--follow` (ou `-f`) para manter o processo ativo, e ir mostrando os logs que vão aparecendo. `CTRL+C` para parar o processo.
 
 Passe os nomes dos serviços para mostrar logs específicos.
 
-Para mostrar as imagens criadas pelo arquivo compose, execute
+Para mostrar as imagens usadas pelos Containers criados pelo arquivo compose, execute
 ```
-docker-compose <--file caminho/compose.yaml> images
+docker-compose <--file caminho/compose.yaml --project-directory caminho> images
 ```
 Passe os nomes dos serviços para mostrar as imagens específicas.
 
-Para mostrar os processos em execução do arquivo compose, execute
+Para mostrar os processos em execução dos Containers criados pelo arquivo compose, execute
 ```
-docker-compose <--file caminho/compose.yaml> top
+docker-compose <--file caminho/compose.yaml --project-directory caminho> top
 ```
 Passe os nomes dos serviços para mostrar os processos específicos.

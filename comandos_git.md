@@ -51,7 +51,7 @@ Esse material é apenas um resumo, para ver a documentação completa do `Git`, 
 git --help
 ```
 
-Para configurar seu nome de usuário e email em toda sua máquina (globalmente), execute 
+Para configurar seu nome de usuário e email em toda sua máquina (globalmente), execute
 ```
 git config --global user.name "<nome de usuário>"
 git config --global user.email "<email>"
@@ -107,12 +107,6 @@ Para atualizar os submódulos de um projeto, execute
 git submodule update --remote
 ```
 
-Para adicionar um repositório remoto nomeado `<nome>`, execute
-```
-git remote add <nome> <endereço>
-```
-alterando `<endereco>` pelo endereço do repositório remoto.
-
 Para mostrar o estado (em relação à arquivos não rastreados/modificados/deletados e a fila de espera de arquivos a serem *commitados*), execute
 ```
 git status
@@ -123,10 +117,31 @@ Para mostrar um gráfico dos *commits*, execute
 git log --all --decorate --oneline --graph
 ```
 
-Para mostrar o nome do repositório remoto, execute
+Para mostrar os nomes dos repositórios remoto, execute
 ```
 git remote show
 ```
+ou
+```
+git remote -v
+```
+
+Para adicionar um repositório remoto nomeado `<nome>`, execute
+```
+git remote add <nome> <endereço>
+```
+alterando `<endereco>` pelo endereço do repositório remoto.
+
+Para remover um repositório remoto nomeado `<nome>`, execute
+```
+git remote remove <nome>
+```
+
+Para atualizar um repositório remoto nomeado `<nome>`, execute
+```
+git remote update <nome>
+```
+Use a opção `--prune` para apagar as `branches` que foram apagadas no repositório remoto.
 
 Para listar as `branches` do repositório (e mostrar em qual está no momento), execute
 ```
